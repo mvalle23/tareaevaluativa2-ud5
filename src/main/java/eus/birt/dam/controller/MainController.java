@@ -13,6 +13,7 @@ import eus.birt.dam.repository.CyclistRepository;
 	
 	@Autowired
    	private CyclistRepository cyclistRepository;
+	
 	@GetMapping ({"/","/welcome"})
 	public String welcome(Model model) {
 		model.addAttribute("cyclists", cyclistRepository.findAll());
