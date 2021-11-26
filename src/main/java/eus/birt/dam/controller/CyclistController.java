@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import eus.birt.dam.service.CyclistService;
 
 @Controller
-@RequestMapping ("/cyclist")
+@RequestMapping ("/cyclists")
 public class CyclistController {
 
 	@Autowired
