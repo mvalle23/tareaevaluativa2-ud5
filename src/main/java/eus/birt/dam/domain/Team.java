@@ -35,18 +35,18 @@ public class Team {
 	
 	private String nationality;
 	
-	private String director;
+	private String manager;
 	
 	@OneToMany
 	@JoinColumn (name = "team_id")
 	List <Cyclist> cyclists = new ArrayList<>();
 
-	public Team(String name, String city, String nationality, String director) {
+	public Team(String name, String city, String nationality, String manager) {
 		super();
 		this.name = name;
 		this.city = city;
 		this.nationality = nationality;
-		this.director = director;
+		this.manager = manager;
 	}
 	
 	

@@ -12,8 +12,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -36,7 +37,8 @@ public class Cyclist {
 	@Column(name="last_name")
 	private String lastName;
 	
-	private LocalDate birthdate;
+	@DateTimeFormat (pattern = "yyyy-MM-dd")
+	private LocalDate birthDate;
 	
 	private String nationality;
 	
@@ -44,11 +46,11 @@ public class Cyclist {
 	@JoinColumn (name = "team_id")
 	private Team team;
 
-	public Cyclist(String firstName, String lastName, LocalDate birthdate, String nationality) {
+	public Cyclist(String firstName, String lastName, LocalDate birthDate, String nationality) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.birthdate = birthdate;
+		this.birthDate = birthDate;
 		this.nationality = nationality;
 	}
 }

@@ -20,7 +20,7 @@
     <tr th:each="cyclist : ${cyclists}">
         <td scope="row" th:text="${cyclist.firstName}"></td>
         <td scope="row" th:text="${cyclist.lastName}"></td>
-        <td scope="row" th:text="${cyclist.birthdate}"></td>
+        <td scope="row" th:text="${cyclist.birthDate}"></td>
         <td scope="row" th:text="${cyclist.Nationality}"></td>
         <td class="actions"><a href="#"							
 								class="btn btn-primary">Edit</a>
@@ -29,7 +29,7 @@
     </tr>    
 </table>
 
-<a th:href="@{/cyclists/new}" class="btn btn-success">Añadir</a>   
+<a th:href="@{/cyclists/new}" class="btn btn-success">Add new</a>   
 <div th:replace="fragments/footer :: footer"></div>
 <br/>  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
