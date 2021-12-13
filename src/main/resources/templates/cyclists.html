@@ -22,11 +22,9 @@
         <td scope="row" th:text="${cyclist.lastName}"></td>
         <td scope="row" th:text="${cyclist.birthDate}"></td>
         <td scope="row" th:text="${cyclist.Nationality}"></td>
-        <td class="actions"><a href="#"							
-								class="btn btn-primary">Edit</a>
-								<a th:href="@{/cyclists/delete/{id}(id=${cyclist.id})}" class="btn btn-danger">Delete</a>   						
-		</td>
-    </tr>    
+        <td class="actions"><a th:href="@{/cyclists/edit/{id}(id=${cyclist.id})}" class="btn btn-primary">Edit</a>   						
+							<a th:href="@{/cyclists/delete/{id}(id=${cyclist.id})}" class="btn btn-danger">Delete</a>   						
+	</tr>    
 </table>
 
 <a th:href="@{/cyclists/new}" class="btn btn-success">Add new</a>   

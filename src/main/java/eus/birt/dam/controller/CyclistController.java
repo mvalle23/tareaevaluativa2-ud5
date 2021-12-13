@@ -22,7 +22,7 @@ public class CyclistController {
 	
 	
 	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable("id") Long id) {
+	public String initDelete(@PathVariable("id") Long id) {
 		cyclistRepository.deleteById(id);
 		return "redirect:/cyclists";
 	}
@@ -35,9 +35,20 @@ public class CyclistController {
 	}
 	
 	@PostMapping("/new/submit")
-	public String processCreationForm(@ModelAttribute Cyclist cyclist) {
+	public String submitCreationForm(@ModelAttribute Cyclist cyclist) {
 		cyclistRepository.save(cyclist);
 		return "redirect:/cyclists/";
-		}
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String initEditForm(@PathVariable("id") Long id, Model model) {	
+		model.addAttribute("cyclist", cyclistRepository.findById(id));
+		return "editCyclistForm";
 	}
 
+	@PostMapping("/edit")
+	public String submitEditForm(@ModelAttribute Cyclist cyclist) {
+		cyclistRepository.save(cyclist);
+		return "redirect:/cyclists/";
+	}
+}
