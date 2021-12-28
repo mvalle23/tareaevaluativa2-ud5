@@ -29,12 +29,18 @@ TeamRepository teamRepository;
 	public String initCreationForm(Model model) {
 		Team team = new Team();
 		model.addAttribute("team", team);
-		return "createTeamForm";
+		return "teamForm";
 	}
 	
 	@PostMapping("/new/submit")
 	public String processCreationForm(@ModelAttribute Team team) {
 		teamRepository.save(team);
 		return "redirect:/teams/";
-		}
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String initEditForm(@PathVariable("id") Long id, Model model) {	
+		model.addAttribute("team", teamRepository.findById(id));
+		return "teamForm";
+	}
 }
