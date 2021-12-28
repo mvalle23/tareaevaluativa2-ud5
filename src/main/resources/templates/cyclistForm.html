@@ -8,12 +8,13 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-<h1>Create cyclist</h1>
 
-<form method="post" action="#"
-					th:action="@{/cyclists/new/submit}" th:object="${cyclist}">
+<form method="post" action="#"th:action="@{/cyclists/new/submit}" th:object="${cyclist}">
+<h1>
+	 <span th:text="${id} ? 'Edit' : 'New'"></span> cyclist
+</h1>
   
-  
+  <input type="hidden" th:field="*{id}" id="id" />
   <div class="form-group">
 	<label for="firstnameInput">First Name</label>
 	<input class="form-control" type="text"	placeholder="Enter First Name" th:field="*{firstName}"></input>

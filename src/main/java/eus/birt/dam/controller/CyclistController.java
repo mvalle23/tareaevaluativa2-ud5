@@ -31,7 +31,7 @@ public class CyclistController {
 	public String initCreationForm(Model model) {
 		Cyclist cyclist = new Cyclist();
 		model.addAttribute("cyclist", cyclist);
-		return "createCyclistForm";
+		return "cyclistForm";
 	}
 	
 	@PostMapping("/new/submit")
@@ -43,12 +43,6 @@ public class CyclistController {
 	@GetMapping("/edit/{id}")
 	public String initEditForm(@PathVariable("id") Long id, Model model) {	
 		model.addAttribute("cyclist", cyclistRepository.findById(id));
-		return "editCyclistForm";
-	}
-
-	@PostMapping("/edit")
-	public String submitEditForm(@ModelAttribute Cyclist cyclist) {
-		cyclistRepository.save(cyclist);
-		return "redirect:/cyclists/";
+		return "cyclistForm";
 	}
 }
