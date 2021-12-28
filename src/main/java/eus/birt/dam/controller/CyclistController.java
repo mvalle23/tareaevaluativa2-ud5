@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import eus.birt.dam.domain.Cyclist;
 import eus.birt.dam.repository.CyclistRepository;
+import eus.birt.dam.repository.TeamRepository;
 
 @Controller
 @RequestMapping ("/cyclists")
@@ -19,6 +20,9 @@ public class CyclistController {
 
 	@Autowired
 	CyclistRepository cyclistRepository;
+	
+	@Autowired
+	TeamRepository teamRepository;
 	
 	
 	@GetMapping("/delete/{id}")
@@ -31,6 +35,7 @@ public class CyclistController {
 	public String initCreationForm(Model model) {
 		Cyclist cyclist = new Cyclist();
 		model.addAttribute("cyclist", cyclist);
+		model.addAttribute("teams", teamRepository.findAll());
 		return "cyclistForm";
 	}
 	
@@ -43,6 +48,7 @@ public class CyclistController {
 	@GetMapping("/edit/{id}")
 	public String initEditForm(@PathVariable("id") Long id, Model model) {	
 		model.addAttribute("cyclist", cyclistRepository.findById(id));
+		model.addAttribute("teams", teamRepository.findAll());
 		return "cyclistForm";
 	}
 }

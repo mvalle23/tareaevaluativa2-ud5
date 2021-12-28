@@ -15,13 +15,14 @@
      	<th scope="col">LastName</th>
      	<th scope="col">BirthDate</th>
       	<th scope="col">Nationality</th>
+      	<th scope="col">Team</th>
       	<th scope="col">Action</th>
     </tr>
     <tr th:each="cyclist : ${cyclists}">
         <td scope="row" th:text="${cyclist.firstName}"></td>
         <td scope="row" th:text="${cyclist.lastName}"></td>
         <td scope="row" th:text="${cyclist.birthDate}"></td>
-        <td scope="row" th:text="${cyclist.Nationality}"></td>
+        <td scope="row" th:text="${cyclist.nationality}"></td>
         <td class="actions"><a th:href="@{/cyclists/edit/{id}(id=${cyclist.id})}" class="btn btn-primary">Edit</a>   						
 							<a th:href="@{/cyclists/delete/{id}(id=${cyclist.id})}" class="btn btn-danger">Delete</a>   						
 							</td>
