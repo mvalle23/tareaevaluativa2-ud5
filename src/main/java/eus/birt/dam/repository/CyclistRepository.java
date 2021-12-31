@@ -10,10 +10,5 @@ import org.springframework.data.repository.query.Param;
 import eus.birt.dam.domain.Cyclist;
 
 public interface CyclistRepository extends JpaRepository<Cyclist, Long>{
-
-	@Transactional
-	@Modifying
-	@Query ("UPDATE Cyclist c SET c.firstName = :firstName WHERE c.id = :Id")
-	int updateFirstName(@Param("Id") Long id, @Param("firstName") String firstName);
 	
 }
