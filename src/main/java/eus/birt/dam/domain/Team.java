@@ -3,6 +3,7 @@ package eus.birt.dam.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -37,8 +38,8 @@ public class Team {
 	
 	private String manager;
 	
-	@OneToMany
-	@JoinColumn (name = "team_id")
+	
+	@OneToMany (mappedBy = "team",cascade = CascadeType.ALL)
 	List <Cyclist> cyclists = new ArrayList<>();
 
 	public Team(String name, String city, String nationality, String manager) {
