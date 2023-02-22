@@ -9,38 +9,38 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import eus.birt.dam.domain.Team;
-import eus.birt.dam.repository.TeamRepository;
+import eus.birt.dam.domain.Editorial;
+import eus.birt.dam.repository.EditorialRepository;
 
 @Controller
-@RequestMapping ("/teams")
-public class TeamController {
+@RequestMapping ("/editoriales")
+public class EditorialController {
 
 @Autowired
-TeamRepository teamRepository;
+EditorialRepository editorialRepository;
 	
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Long id) {
-		teamRepository.deleteById(id);
-	return "redirect:/teams";
+		editorialRepository.deleteById(id);
+	return "redirect:/editoriales";
 	}
 	
 	@GetMapping("/new")
 	public String initCreationForm(Model model) {
-		Team team = new Team();
-		model.addAttribute("team", team);
-		return "teamForm";
+		Editorial editorial = new Editorial();
+		model.addAttribute("editorial", editorial);
+		return "editorialForm";
 	}
 	
 	@PostMapping("/new/submit")
-	public String processCreationForm(@ModelAttribute Team team) {
-		teamRepository.save(team);
-		return "redirect:/teams/";
+	public String processCreationForm(@ModelAttribute Editorial editorial) {
+		editorialRepository.save(editorial);
+		return "redirect:/editoriales";
 	}
 	
 	@GetMapping("/edit/{id}")
 	public String initEditForm(@PathVariable("id") Long id, Model model) {	
-		model.addAttribute("team", teamRepository.findById(id));
-		return "teamForm";
+		model.addAttribute("editorial", editorialRepository.findById(id));
+		return "editorialForm";
 	}
 }

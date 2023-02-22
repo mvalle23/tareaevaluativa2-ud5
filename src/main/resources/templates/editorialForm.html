@@ -9,23 +9,23 @@
 <body>
 <div th:replace="fragments/header :: header"></div>
 
-<form method="post" action="#"th:action="@{/teams/new/submit}" th:object="${team}">
+<form method="post" action="#"th:action="@{/editoriales/new/submit}" th:object="${editorial}">
  <h1>
-	 <span th:text="${id} ? 'Edit' : 'New'"></span> team
+	 <span th:text="${id} ? 'Edit' : 'New'"></span> editorial
 </h1>
 
 	<input type="hidden" th:field="*{id}" id="id" />  
   <div class="form-group">
-	<label for="nameInput">Name</label>
-	<input class="form-control" type="text"	placeholder="Enter Name" th:field="*{name}"></input>
+	<label for="nombreInput">Nombre</label>
+	<input class="form-control" type="text"	placeholder="Enter Nombre" th:field="*{nombre}"></input>
   </div>				
    <div class="form-group">
-    <label for="cityInput">City</label>
-    <input class="form-control" type="text" placeholder="Enter City" th:field="*{city}">
+    <label for="ciudadInput">Ciudad</label>
+    <input class="form-control" type="text" placeholder="Enter Ciudad" th:field="*{ciudad}">
   </div>
     <div class="form-group">
-    <label for="nationalityInput">Nationality</label>
-    <input class="form-control" type="text" placeholder="Enter Nationality" th:field="*{nationality}">
+    <label for="paisInput">País</label>
+    <input class="form-control" type="text" placeholder="Enter Pais" th:field="*{pais}">
   </div>
     <div class="form-group">
     <label for="managerInput">Director</label>
