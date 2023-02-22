@@ -5,33 +5,33 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import eus.birt.dam.repository.CyclistRepository;
-import eus.birt.dam.repository.TeamRepository;
+import eus.birt.dam.repository.LibroRepository;
+import eus.birt.dam.repository.EditorialRepository;
 
 
 @Controller
 	public class MainController {
 	
 	@Autowired
-   	private CyclistRepository cyclistRepository;
+   	private LibroRepository libroRepository;
 	@Autowired
-   	private TeamRepository teamRepository;
+   	private EditorialRepository editorialRepository;
 	
 	@GetMapping ({"/","/welcome"})
 	public String welcome() {
 		return "index";
 	}
 	
-	@GetMapping ({"/cyclists"})
+	@GetMapping ({"/libros"})
 	public String getCyclists(Model model) {
-		model.addAttribute("cyclists", cyclistRepository.findAll());
-		return "cyclists";
+		model.addAttribute("libros", libroRepository.findAll());
+		return "libros";
 	}
 	
-	@GetMapping ({"/teams"})
+	@GetMapping ({"/editoriales"})
 	public String getTeams(Model model) {
-		model.addAttribute("teams", teamRepository.findAll());
-		return "teams";
+		model.addAttribute("editoriales", editorialRepository.findAll());
+		return "editoriales";
 	}
 }
 	
