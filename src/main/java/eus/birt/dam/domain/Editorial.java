@@ -17,6 +17,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+//Entidad editorial
 @Getter
 @Setter
 @NoArgsConstructor

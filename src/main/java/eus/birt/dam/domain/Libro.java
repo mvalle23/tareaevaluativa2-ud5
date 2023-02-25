@@ -19,6 +19,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+//Entidad libro
 @Getter
 @Setter
 @NoArgsConstructor
