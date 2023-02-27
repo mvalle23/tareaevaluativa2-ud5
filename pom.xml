@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>eus.birt.dam</groupId>
-	<artifactId>ud5-tareaAprendizaje4-1</artifactId>
+	<artifactId>ud5-tareaEvaluativa2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ud5-tareaAprendizaje4</name>
-	<description>ud5-tareaAprendizaje4-1</description>
+	<name>ud5-tareaEvaluativa2</name>
+	<description>ud5-tareaEvaluativa2</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
